@@ -1,26 +1,46 @@
-//A;
-
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
  
-#define endl        "\n"
-#define ll          long long
-#define pb          push_back
-#define pop         pop_back
-#define FOR         for(int i=0;i<n;i++)
-#define yes         cout<<"YES"<<endl;
-#define no          cout<<"NO"<<endl;
-#define BOOST       ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-#define pi          3.141592653589793238
-int main(){
-BOOST;
-int a,b;
-cin>>a>>b;
-int sum;
-
-if(a<200 && b<200){
-    sum=a+b;
+void swap(int arr[], int i, int j)
+{
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
-cout<<sum;
+ 
+void selectionSort(int arr[], int i, int n)
+{
+    
+    int min = i;
+    for (int j = i + 1; j < n; j++)
+    {
+        if (arr[j] < arr[min]) {
+            min = j;    
+        }
+    }
+ 
+    
+    swap(arr, min, i);
+ 
+    if (i + 1 < n) {
+        selectionSort(arr, i + 1, n);
+    }
 }
-
+ 
+void printArray(int arr[], int n)
+{
+    for (int i = 0; i < n; i++) {
+        cout<<arr[i]<<" ";
+    }
+}
+ 
+int main()
+{
+    int arr[] = { 3, 5, 8, 4, 1, 9, -2 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+ 
+    selectionSort(arr, 0, n);
+    printArray(arr, n);
+ 
+    return 0;
+}
