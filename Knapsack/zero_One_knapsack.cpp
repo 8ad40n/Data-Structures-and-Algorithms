@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include<cstring>
 using namespace std;
 int knapSack(int W, int wt[], int val[], int n)
 {
