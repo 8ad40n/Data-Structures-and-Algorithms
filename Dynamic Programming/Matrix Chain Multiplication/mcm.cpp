@@ -44,6 +44,5 @@ int main()
 	cout << "Minimum number of multiplications is "
 		<< MatrixChainOrder(arr, size);
 
-	getchar();
 	return 0;
 }
