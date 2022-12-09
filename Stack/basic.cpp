@@ -84,9 +84,10 @@ int main()
     s.push(20);
     s.push(30);
     s.push(40);
-    s.pop();
-    s.pop();
+    // s.pop();
+    // s.pop();
     s.push(50);
+    s.pop();
     
     //cout<<endl<<s.peek()<<endl;
     s.print();
