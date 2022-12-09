@@ -1,0 +1,22 @@
+Algorithms Final Task:
+
+1. FIbonacci using recursion.#
+2. Fibonacci using array.#
+3. Fibonacci using 2 values.#
+4. 0-1 Knapsack.#
+5. Fractional Knapsack.#
+6. LCS using recursion.#
+7. LCS using array.
+8. MCM. #
+9. Matrix Multiplication.#
+10. Adjacency Matrix.#
+11. Adjacency List.#
+12. BFS.#
+13. DFS.#
+14. Topological Sort. #
+15. MST.
+16. Kruskal.#
+17. Prim.
+18. Dijkstra.#
+19. Bellman-Ford.
+20. Floyd-Warshall.#
