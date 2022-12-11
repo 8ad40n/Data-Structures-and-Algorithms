@@ -1,0 +1,134 @@
+#include<iostream>
+
+using namespace std;
+
+#define SIZE 100
+#define CONNECTED 1
+#define DISCONNECTED 0
+#define WHITE -1
+#define GREY 0
+#define BLACK 1
+#define EMPTY_PARENT -1
+
+int graph[SIZE+1][SIZE+1];	// adjacency matrix for graph
+int no_of_nodes, no_of_edges;
+
+/*
+- color[]: is used to identify discoverd/undiscovered/finished node
+- d[]: is used to keep discoverd time of nodes
+- f[]: is used to keep finished time of nodes
+- p[]: is used to keep track of parent nodes
+*/
+int color[SIZE+1], d[SIZE+1], f[SIZE+1], p[SIZE+1];
+int time;
+
+/*
+this function is used to take graph input from the user
+*/
+void read_graph()
+{
+	int x, y;
+
+	// input no. of nodes
+	cout << "Enter no. of nodes: ";
+	cin >> no_of_nodes;
+
+	// initialize graph based on no. of nodes.
+	// initially all nodes are disconnected
+	for(int i=1; i<=no_of_nodes; i++)
+		for(int j=1; j<=no_of_nodes; j++)
+			graph[i][j] = DISCONNECTED;
+
+	// input no/ of edges
+	cout << "Enter no. of edges: ";
+	cin >> no_of_edges;
+
+	// take all edges as input and initialize graph accordingly
+	// here graph is bidirectional
+	for(int i=1; i<=no_of_edges; i++)
+	{
+		cout << "Enter edge-" << i << ": ";
+		cin >> x >> y;
+		graph[x][y] = graph[y][x] = CONNECTED;
+	}
+}
+
+/*
+this function performs all task when a node is visited in DFS
+*/
+void DFS_Visit(int u)
+{
+	color[u] = GREY;	// mark node as discovered
+	time = time+1;		// increase discover time
+	d[u] = time;		// store discover time for node
+
+	// find all neighbor v for node u
+	for(int v=1; v<=no_of_nodes; v++)
+	{
+		if(graph[u][v] == CONNECTED)
+		{
+			if(color[v] == WHITE)	// check undiscover node
+			{
+				p[v] = u;			// store parent of node u
+				DFS_Visit(v);		// visit node v
+			}
+		}
+	}
+
+	color[u] = BLACK;	// mark node as finished
+	time = time+1;		// increase finshing time
+	f[u] = time;		// store finish time for node u
+}
+
+/*
+this function performs DFS on a graph
+	- graph[][]: adjacency matrix for graph
+	- color[]: is used to identify discoverd/undiscovered/finished node
+	- d[]: is used to keep discoverd time of nodes
+	- f[]: is used to keep finished time of nodes
+	- p[]: is used to keep track of parent nodes
+*/
+void DFS()
+{
+	// initialize all nodes as undiscovered using color[]
+	// initialize p[] with empty parent since initially no node has any parent
+	for(int u=1; u<=no_of_nodes; u++)
+	{
+		color[u] = WHITE;		// mark node u as undiscovered
+		p[u] = EMPTY_PARENT;	// initialize empty parent for node u
+	}
+
+	time = 0;	// initially time is zero
+	for(int u=1; u<=no_of_nodes; u++)
+		if(color[u] == WHITE)	// if node u is undiscovered then visit
+			DFS_Visit(u);		// visit node u
+}
+
+void find_path_for(int node)
+{
+	if(node == EMPTY_PARENT)	// root node has no parent
+		return;
+
+	find_path_for(p[node]);		// recurively find parents
+	cout << "-> " << node;		// print from top so that we can get path in correct sequence
+}
+
+int main()
+{
+	read_graph();	// read graph
+	DFS();			// run DFS for given graph
+
+	// print discover time/finish time for each node
+	for(int i=1; i<=no_of_nodes; i++)
+        cout << "For " << i << ": " << d[i] << "/" << f[i] << endl;
+	cout << endl;
+
+	// find path for a given node
+	int node;
+	cout << "Enter node to find path: ";
+	cin >> node;
+	find_path_for(node);
+	cout << endl;
+
+	return 0;
+}

@@ -1,0 +1,62 @@
+#include<stdio.h>
+
+#define SIZE 100
+#define CONNECTED 1
+#define DISCONNECTED 0
+
+int graph[SIZE+1][SIZE+1];
+int no_of_nodes;
+
+void read_graph()
+{
+	int edges, x, y;
+
+	printf("Enter no. of nodes: ");
+	scanf("%d", &no_of_nodes);
+
+	printf("Enter no. of edges: ");
+	scanf("%d", &edges);
+
+	for(int i=1; i<=no_of_nodes; i++)
+		for(int j=1; j<=no_of_nodes; j++)
+			graph[i][j] = DISCONNECTED;
+
+	for(int i=1; i<=edges; i++)
+	{
+		printf("Enter edge-%d: ", i);
+		scanf("%d %d", &x, &y);
+		graph[x][y] = graph[y][x] = CONNECTED;
+	}
+}
+
+void find_all_neighbor()
+{
+	for(int i=1; i<=no_of_nodes; i++)
+	{
+		printf("Neighbor of %d: ", i);
+		for(int j=1; j<=no_of_nodes; j++)
+		{
+			if(graph[i][j] == CONNECTED)
+				printf("%d ", j);
+		}
+		printf("\n");
+	}
+}
+
+void find_neighbor_for(int node)
+{
+	printf("Neighbor of %d: ", node);
+	for(int i=1; i<=no_of_nodes; i++)
+	{
+		if(graph[node][i] == CONNECTED)
+				printf("%d ", i);
+	}
+	printf("\n");
+}
+
+void main()
+{
+	read_graph();
+	find_all_neighbor();
+	find_neighbor_for(2);
+}
