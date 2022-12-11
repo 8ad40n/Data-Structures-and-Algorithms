@@ -1,18 +1,18 @@
 Algorithms Final Task:
 
-1. FIbonacci using recursion.# (LAB)
-2. Fibonacci using array.# (LAB)
-3. Fibonacci using 2 values.# (LAB)
-4. 0-1 Knapsack.# (LAB)
+1.. FIbonacci using recursion.# (LAB)
+2.. Fibonacci using array.# (LAB)
+3.. Fibonacci using 2 values.# (LAB)
+4.. 0-1 Knapsack.# (LAB)
 5. Fractional Knapsack.#
-6. LCS using recursion.# (LAB)
+6.. LCS using recursion.# (LAB)
 7. LCS using array. (LAB)
-8. MCM. # (LAB)
+8.. MCM. # (LAB)
 9. Matrix Multiplication.# (LAB)
-10. Adjacency Matrix.# (LAB)
-11. Adjacency List.# (LAB)
-12. BFS.# (LAB)
-13. DFS.# (LAB)
+10.. Adjacency Matrix.# (LAB)
+11.. Adjacency List.# (LAB)
+12.. BFS.# (LAB)
+13.. DFS.# (LAB)
 14. Topological Sort. #
 15. MST.
 16. Kruskal.#
