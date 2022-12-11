@@ -6,7 +6,7 @@ int LCS(string A, string B, int i, int j)
 {
     if (i == 0 || j == 0)
         return 0;
-    if (A[i - 1] == B[j - 1])
+    if (A[i] == B[j])
     {
         return 1 + LCS(A, B, i - 1, j - 1);
     }
