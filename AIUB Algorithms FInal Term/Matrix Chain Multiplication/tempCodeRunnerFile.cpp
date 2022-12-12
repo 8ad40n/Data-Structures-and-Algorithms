@@ -1,3 +1,8 @@
+
+///*
+// C++ code to implement the
+// matrix chain multiplication using recursion
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -42,3 +47,4 @@ int main()
 }
 
 // This code is contributed by Shivi_Aggarwal
+//*/
