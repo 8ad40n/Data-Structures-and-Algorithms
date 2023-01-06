@@ -14,13 +14,13 @@ int main()
     cin>>node;
     cin>>edge;
 
-    //for taking edges input 
+    //for taking edges input
     int x,y;
     for(int i=0;i<edge;i++)
         {
             cin>>x>>y;
-            adj[x].push_back(y);
             adj[y].push_back(x);
+            adj[x].push_back(y);
 
         }
         queue<int>q;

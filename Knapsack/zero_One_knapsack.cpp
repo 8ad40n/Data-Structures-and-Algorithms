@@ -37,9 +37,9 @@ int knapSack(int W, int wt[], int val[], int n)
 }
 int main()
 {
-	int val[] = { 3,4,5,6 };
-	int wt[] = { 2,3,4,5 };
-	int W = 5;
+	int val[] = { 10,6,5,1 };
+	int wt[] = { 9,6,7,3 };
+	int W = 16;
 	int n = sizeof(val) / sizeof(val[0]);
 	cout << knapSack(W, wt, val, n);
 	return 0;

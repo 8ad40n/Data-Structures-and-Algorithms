@@ -1,4 +1,3 @@
-// C++ program for the above approach
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -105,12 +104,15 @@ int main()
 			|	 \ |
 			2--------3
 				4	 */
-	Graph g(4);
-	g.addEdge(0, 1, 10);
-	g.addEdge(1, 3, 15);
-	g.addEdge(2, 3, 4);
-	g.addEdge(2, 0, 6);
-	g.addEdge(0, 3, 5);
+	Graph g(7);
+	g.addEdge(1, 2, 28);
+	g.addEdge(2, 3, 16);
+	g.addEdge(2, 7, 14);
+	g.addEdge(3, 4, 12);
+	g.addEdge(4, 5, 22);
+	g.addEdge(4, 7, 18);
+	g.addEdge(5, 6, 25);
+	g.addEdge(6, 1, 10);
 
 	// Function call
 	g.kruskals_mst();

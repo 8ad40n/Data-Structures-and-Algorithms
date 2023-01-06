@@ -1,16 +1,54 @@
+//{ Driver Code Starts
+//Initial Template for C++
+
+
 #include<bits/stdc++.h>
 using namespace std;
-int main()
-{
-    int t;
-    cin>>t;
-    for(int i=1;i<=t;i++){
-        int a,b,c;
-        cin>>a>>b>>c;
-        int count =0;
-        if((a+b+c)>=2 && (a+b+c)<=3){
-            count ++;
-        }
-        cout<<count <<endl;
-    }
+
+
+string reverseWord(string str);
+
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	string s;
+	cin >> s;
+	
+	cout << reverseWord(s) << endl;
+	}
+	return 0;
+	
 }
+
+
+// } Driver Code Ends
+
+
+//User function Template for C++
+
+string reverseWord(string str){
+    
+  //Your code here
+  // string str=Geeks
+char a[str.length()];
+int count=0;
+  
+  for(int i=str.length();i>=0;i--)
+    {
+        if(count <= str.length()){
+            
+             a[count++]= str[i];
+        }
+        
+       
+    }
+    str=a;
+    cout<< str;
+    return str;
+ 
+}
+
